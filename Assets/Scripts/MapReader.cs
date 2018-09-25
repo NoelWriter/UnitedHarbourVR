@@ -2,13 +2,19 @@
 using System.Xml;
 using UnityEngine;
 
-public class MapReader : MonoBehaviour {
+public class MapReader : MonoBehaviour
+{
+    [HideInInspector]
+    public Dictionary<ulong, OsmNode> nodes;
 
-    Dictionary<ulong, OsmNode> nodes;
-    OsmBounds bounds;
-    List<OsmWay> ways;
+    [HideInInspector]
+    public OsmBounds bounds;
+
+    [HideInInspector]
+    public List<OsmWay> ways;
 
     public string resourceFile;
+    public bool IsReady { get; private set;  }
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +29,8 @@ public class MapReader : MonoBehaviour {
         SetBounds(doc.SelectSingleNode("/osm/bounds"));
         GetNodes(doc.SelectNodes("/osm/node"));
         GetWays(doc.SelectNodes("/osm/way"));
+
+        IsReady = true;
 	}
 
     private void Update()

@@ -265,6 +265,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1719232088}
   - component: {fileID: 1719232087}
+  - component: {fileID: 1719232090}
+  - component: {fileID: 1719232089}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -283,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90ace18a4f2c174bab3e35940bd2e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceFile: map
+  resourceFile: vlissingen
 --- !u!4 &1719232088
 Transform:
   m_ObjectHideFlags: 0
@@ -297,3 +299,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719232089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719232086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e390c8d225b4a2c48bf0552799aa8dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 2100000, guid: b258d9f86978bf44e9545bea6a9c00cb, type: 2}
+--- !u!114 &1719232090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719232086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b0f84cbf7cafc4692d3735ffa61351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
