@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90ace18a4f2c174bab3e35940bd2e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceFile: vlissingen
+  resourceFile: goes
 --- !u!4 &1719232088
 Transform:
   m_ObjectHideFlags: 0
@@ -310,7 +310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e390c8d225b4a2c48bf0552799aa8dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 2100000, guid: b258d9f86978bf44e9545bea6a9c00cb, type: 2}
+  Industrial: {fileID: 2100000, guid: 6fa4e1e61a97b974b9eec73003c78014, type: 2}
+  Residential: {fileID: 2100000, guid: 24f184816cea42842980738b0994652a, type: 2}
+  NoTag: {fileID: 2100000, guid: b258d9f86978bf44e9545bea6a9c00cb, type: 2}
 --- !u!114 &1719232090
 MonoBehaviour:
   m_ObjectHideFlags: 0
