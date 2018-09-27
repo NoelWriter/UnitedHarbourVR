@@ -6,7 +6,9 @@ using UnityEngine;
 public class BuildingMaker : MonoBehaviour
 {
     MapReader map;
-    public Material building;
+    public Material Industrial;
+    public Material Residential;
+    public Material NoTag;
 
     IEnumerator Start()
     {
@@ -25,7 +27,13 @@ public class BuildingMaker : MonoBehaviour
             MeshFilter mf = go.AddComponent<MeshFilter>();
             MeshRenderer mr = go.AddComponent<MeshRenderer>();
 
-            mr.material = building;
+            if (way.IsIndustrial)
+            {
+                mr.material = Industrial;
+            } else
+            {
+                mr.material = NoTag;
+            }
 
             List<Vector3> vectors = new List<Vector3>();
             List<Vector3> normals = new List<Vector3>();

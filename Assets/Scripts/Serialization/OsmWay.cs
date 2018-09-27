@@ -9,6 +9,7 @@ public class OsmWay : BaseOsm
     public bool IsBoundary { get; private set; }
     public bool IsBuilding { get; private set; }
     public float Height { get; private set; }
+    public bool IsIndustrial { get; private set; }
 
     public OsmWay(XmlNode node)
     {
@@ -44,6 +45,11 @@ public class OsmWay : BaseOsm
             else if (key == "building")
             {
                 IsBuilding = true;
+                if (GetAttribute<string>("v", t.Attributes) == "industrial")
+                {
+                    Height = 20.0f;
+                    IsIndustrial = true;
+                }
                 //IsBuilding = GetAttribute<string>("v", t.Attributes) == "yes";
             }
             else if (key == "highway")
