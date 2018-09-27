@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(MapReader))]
-public class BuildingMaker : MonoBehaviour
+class BuildingMaker : InfrastructureBehaviour
 {
-    MapReader map;
     public Material Industrial;
     public Material Residential;
     public Material NoTag;
 
     IEnumerator Start()
     {
-        map = GetComponent<MapReader>();
         while (!map.IsReady)
         {
             yield return null;
         }
-
+        
         foreach (var way in map.ways.FindAll((w) => { return w.IsBuilding && w.NodeIDs.Count > 1; }))
         {
             GameObject go = new GameObject();
@@ -88,17 +85,5 @@ public class BuildingMaker : MonoBehaviour
 
             yield return null;
         }
-    }
-
-    Vector3 GetCentre(OsmWay way)
-    {
-        Vector3 total = Vector3.zero;
-
-        foreach(var id in way.NodeIDs)
-        {
-            total += map.nodes[id];
-        }
-
-        return total / way.NodeIDs.Count;
     }
 }

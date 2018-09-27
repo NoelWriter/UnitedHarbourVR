@@ -7,6 +7,7 @@ public class OsmWay : BaseOsm
     public bool Visible { get; private set; }
     public List<ulong> NodeIDs { get; private set; }
     public bool IsBoundary { get; private set; }
+    public bool IsRoad { get; private set; }
     public bool IsBuilding { get; private set; }
     public float Height { get; private set; }
     public bool IsIndustrial { get; private set; }
@@ -54,7 +55,7 @@ public class OsmWay : BaseOsm
             }
             else if (key == "highway")
             {
-
+                IsRoad = true;
             }
             else if (key == "waterway")
             {
