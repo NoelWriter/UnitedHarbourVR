@@ -324,3 +324,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b0f84cbf7cafc4692d3735ffa61351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roadMaterial: {fileID: 2100000, guid: 4252234871c227741b3ab025cbc47e31, type: 2}
