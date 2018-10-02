@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Industrial: {fileID: 2100000, guid: 6fa4e1e61a97b974b9eec73003c78014, type: 2}
-  Residential: {fileID: 0}
+  Residential: {fileID: 2100000, guid: 24f184816cea42842980738b0994652a, type: 2}
   NoTag: {fileID: 2100000, guid: b258d9f86978bf44e9545bea6a9c00cb, type: 2}
 --- !u!114 &1719232090
 MonoBehaviour:
