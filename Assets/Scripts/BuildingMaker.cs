@@ -27,6 +27,9 @@ class BuildingMaker : InfrastructureBehaviour
             if (way.IsIndustrial)
             {
                 mr.material = Industrial;
+            } else if (way.IsResidential)
+            {
+                mr.material = Residential;
             } else
             {
                 mr.material = NoTag;
