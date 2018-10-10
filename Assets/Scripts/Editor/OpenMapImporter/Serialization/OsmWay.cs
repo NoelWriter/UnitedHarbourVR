@@ -11,6 +11,7 @@ public class OsmWay : BaseOsm
     public bool IsLand { get; private set; }
     public bool IsBuilding { get; private set; }
     public float Height { get; private set; }
+    public string Name { get; private set; }
     public bool IsIndustrial { get; private set; }
     public bool IsResidential { get; private set; }
 
@@ -70,6 +71,10 @@ public class OsmWay : BaseOsm
             else if (key == "waterway")
             {
 
+            }
+            else if (key == "name")
+            {
+                Name = GetAttribute<string>("v", t.Attributes);
             }
         }
     }
