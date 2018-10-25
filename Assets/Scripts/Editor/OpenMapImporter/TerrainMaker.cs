@@ -2,37 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-internal sealed class TerrainMaker : BaseInfrastructureMaker
+class TerrainMaker : InfrastructureBehaviour
 {
-    public override int NodeCount
-    {
-        get { return map.ways.FindAll((w) => { return w.IsRoad; }).Count; }
-    }
+    private Material terrain;
 
-    public TerrainMaker(MapReader mapReader)
+    public TerrainMaker(MapReader mapReader, Material terrainMaterial)
     : base(mapReader)
     {
+        terrain = terrainMaterial;
+    //}
 
-    }
-
-    public Material Default;
-
-    public override IEnumerable<int> Process()
-    {
-        //while (!map.IsReady)
-        //{
-        //    yield return null;
-        //}
-        int count = 0;
+    //public override void()
+    //{
         foreach (var way in map.ways.FindAll((w) => { return w.IsLand && w.NodeIDs.Count > 1; }))
         {
-            GameObject go = new GameObject();
+            GameObject go = new GameObject("Terrain");
             Vector3 localOrigin = GetCentre(way);
             go.transform.position = localOrigin - map.bounds.Centre;
 
             MeshFilter mf = go.AddComponent<MeshFilter>();
             MeshRenderer mr = go.AddComponent<MeshRenderer>();
-            mr.material = Default;
+            mr.material = terrain;
 
             List<Vector2> vertices2D = new List<Vector2>();
 
@@ -48,7 +38,7 @@ internal sealed class TerrainMaker : BaseInfrastructureMaker
 
             // Use the triangulator to get indices for creating triangles
             Triangulator tr = new Triangulator(vertices2D.ToArray());
-            int[] _indices = tr.Triangulate();
+            int[] indices = tr.Triangulate();
 
             // Create the Vector3 vertices
             Vector3[] vertices = new Vector3[vertices2D.ToArray().Length];
@@ -58,22 +48,15 @@ internal sealed class TerrainMaker : BaseInfrastructureMaker
             }
 
             mf.mesh.vertices = vertices;
-            mf.mesh.triangles = _indices;
+            mf.mesh.triangles = indices;
             mf.mesh.RecalculateNormals();
             mf.mesh.RecalculateBounds();
 
             var angle = go.transform.eulerAngles;
             angle.x = 90;
             go.transform.eulerAngles = angle;
-
-            count++;
-            yield return count;
         }
-        
-    }
-
-    protected override void OnObjectCreated(OsmWay way, Vector3 origin, List<Vector3> vectors, List<Vector3> normals, List<Vector2> uvs, List<int> indices)
-    {
-        throw new System.NotImplementedException();
+        //yield return 0;
     }
 }
+

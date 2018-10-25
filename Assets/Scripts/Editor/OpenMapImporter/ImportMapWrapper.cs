@@ -9,14 +9,20 @@ internal sealed class ImportMapWrapper
 {
     private ImportMapDataEditorWindow _window;
     private string _mapFile;
+    private Material _terrainMaterial;
     private Material _roadMaterial;
     private Material _buildingMaterial;
 
-    public ImportMapWrapper(ImportMapDataEditorWindow window, string mapFile, Material roadMaterial, Material buildingMaterial)
+    public ImportMapWrapper(ImportMapDataEditorWindow window, string mapFile, 
+                                                              Material terrainMaterial,
+                                                              Material roadMaterial, 
+                                                              Material buildingMaterial)
     {
         _window = window;
         _mapFile = mapFile;
+        _terrainMaterial = terrainMaterial;
         _roadMaterial = roadMaterial;
+        _buildingMaterial = buildingMaterial;
     }
 
     public void Import()
@@ -24,6 +30,7 @@ internal sealed class ImportMapWrapper
         var mapReader = new MapReader();
         mapReader.Read(_mapFile);
 
+        var terrainMaker = new TerrainMaker(mapReader, _terrainMaterial);
         var buildingMaker = new BuildingMaker(mapReader, _buildingMaterial);
         var roadMaker = new RoadMaker(mapReader, _roadMaterial);
 

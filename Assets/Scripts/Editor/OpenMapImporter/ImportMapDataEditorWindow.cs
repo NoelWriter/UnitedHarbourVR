@@ -4,6 +4,7 @@ using UnityEditor.SceneManagement;
 
 public class ImportMapDataEditorWindow : EditorWindow
 {
+    private Material _terrainMaterial;
     private Material _roadMaterial;
     private Material _buildingMaterial;
     private string _mapFilePath = "None (Choose File)";
@@ -58,6 +59,7 @@ public class ImportMapDataEditorWindow : EditorWindow
 
         EditorGUILayout.EndHorizontal();
 
+        _terrainMaterial = EditorGUILayout.ObjectField("Terrain Material", _terrainMaterial, typeof(Material), false) as Material;
         _roadMaterial = EditorGUILayout.ObjectField("Road Material", _roadMaterial, typeof(Material), false) as Material;
         _buildingMaterial = EditorGUILayout.ObjectField("Building Material", _buildingMaterial, typeof(Material), false) as Material;
 
@@ -67,7 +69,11 @@ public class ImportMapDataEditorWindow : EditorWindow
         {
             _importing = true;
 
-            var mapWrapper = new ImportMapWrapper(this, _mapFilePath, _roadMaterial, _buildingMaterial);
+            var mapWrapper = new ImportMapWrapper(this, 
+                                                  _mapFilePath,
+                                                  _terrainMaterial,
+                                                  _roadMaterial, 
+                                                  _buildingMaterial);
 
             mapWrapper.Import();
 
@@ -78,6 +84,7 @@ public class ImportMapDataEditorWindow : EditorWindow
         if (_importing)
         {
             var rect = EditorGUILayout.BeginHorizontal();
+            rect.height = 24;
 
             EditorGUI.ProgressBar(rect, _progress, _progressText);
 

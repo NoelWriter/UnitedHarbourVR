@@ -19,10 +19,6 @@ internal sealed class RoadMaker : BaseInfrastructureMaker
 
     public override IEnumerable<int> Process()
     {
-        //while (!map.IsReady)
-        //{
-        //    yield return null;
-        //}
         int count = 0;
         foreach (var way in map.ways.FindAll((w) => { return w.IsRoad && w.NodeIDs.Count > 1; }))
         {
@@ -45,7 +41,7 @@ internal sealed class RoadMaker : BaseInfrastructureMaker
 
             Vector3 diff = (s2 - s1).normalized;
 
-            var cross = Vector3.Cross(diff, Vector3.up) * 3.7f * 2;
+            var cross = Vector3.Cross(diff, Vector3.up) * 3.7f;
 
             Vector3 v1 = s1 + cross;
             Vector3 v2 = s1 - cross;
