@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class TerrainMaker : InfrastructureBehaviour
+class WaterMaker : InfrastructureBehaviour
 {
-    private Material terrain;
+    private Material water;
 
-    public TerrainMaker(MapReader mapReader, Material terrainMaterial)
+    public WaterMaker(MapReader mapReader, Material waterMaterial)
     : base(mapReader)
     {
-        terrain = terrainMaterial;
+        water = waterMaterial;
 
-        foreach (var way in map.ways.FindAll((w) => { return w.IsLand && w.NodeIDs.Count > 1; }))
+        foreach (var way in map.ways.FindAll((w) => { return w.IsWater && w.NodeIDs.Count > 1; }))
         {
-            GameObject go = new GameObject("Terrain");
+            GameObject go = new GameObject("Water");
             Vector3 localOrigin = GetCentre(way);
             go.transform.position = localOrigin - map.bounds.Centre;
 
             MeshFilter mf = go.AddComponent<MeshFilter>();
             MeshRenderer mr = go.AddComponent<MeshRenderer>();
-            mr.material = terrain;
+            mr.material = water;
 
             List<Vector2> vertices2D = new List<Vector2>();
 

@@ -9,11 +9,13 @@ public class OsmWay : BaseOsm
     public bool IsBoundary { get; private set; }
     public bool IsRoad { get; private set; }
     public bool IsLand { get; private set; }
+    public bool IsCoastLine { get; private set; }
+    public bool IsWater { get; private set; }
     public bool IsBuilding { get; private set; }
-    public float Height { get; private set; }
-    public string Name { get; private set; }
     public bool IsIndustrial { get; private set; }
     public bool IsResidential { get; private set; }
+    public float Height { get; private set; }
+    public string Name { get; private set; }
 
     public OsmWay(XmlNode node)
     {
@@ -64,13 +66,13 @@ public class OsmWay : BaseOsm
             {
                 IsRoad = true;
             }
-            else if (key == "landuse")
+            else if (key == "landuse" || key == "grass")
             {
                 IsLand = true;
             }
-            else if (key == "waterway")
+            else if (key == "natural" || key == "water")
             {
-
+                IsWater = true;
             }
             else if (key == "name")
             {

@@ -6,7 +6,9 @@ public class ImportMapDataEditorWindow : EditorWindow
 {
     private Material _terrainMaterial;
     private Material _roadMaterial;
-    private Material _buildingMaterial;
+    private Material _industrialBuildingMaterial;
+    private Material _residentialBuildingMaterial;
+    private Material _waterMaterial;
     private string _mapFilePath = "None (Choose File)";
     private string _progressText;
     private float _progress;
@@ -59,11 +61,16 @@ public class ImportMapDataEditorWindow : EditorWindow
 
         EditorGUILayout.EndHorizontal();
 
+
+
+
         _terrainMaterial = EditorGUILayout.ObjectField("Terrain Material", _terrainMaterial, typeof(Material), false) as Material;
         _roadMaterial = EditorGUILayout.ObjectField("Road Material", _roadMaterial, typeof(Material), false) as Material;
-        _buildingMaterial = EditorGUILayout.ObjectField("Building Material", _buildingMaterial, typeof(Material), false) as Material;
+        _industrialBuildingMaterial = EditorGUILayout.ObjectField("Industrial Building Material", _industrialBuildingMaterial, typeof(Material), false) as Material;
+        _residentialBuildingMaterial = EditorGUILayout.ObjectField("Residential Building Material", _residentialBuildingMaterial, typeof(Material), false) as Material;
+        _waterMaterial = EditorGUILayout.ObjectField("Water Material", _waterMaterial, typeof(Material), false) as Material;
 
-//        EditorGUI.BeginDisabledGroup(!_validFile || _disableUI);
+        //        EditorGUI.BeginDisabledGroup(!_validFile || _disableUI);
         EditorGUI.BeginDisabledGroup(!_validFile || _importing);
         if (GUILayout.Button("Import Map File"))
         {
@@ -72,8 +79,10 @@ public class ImportMapDataEditorWindow : EditorWindow
             var mapWrapper = new ImportMapWrapper(this, 
                                                   _mapFilePath,
                                                   _terrainMaterial,
-                                                  _roadMaterial, 
-                                                  _buildingMaterial);
+                                                  _roadMaterial,
+                                                  _industrialBuildingMaterial,
+                                                  _residentialBuildingMaterial,
+                                                  _waterMaterial);
 
             mapWrapper.Import();
 

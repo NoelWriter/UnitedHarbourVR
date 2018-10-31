@@ -11,18 +11,24 @@ internal sealed class ImportMapWrapper
     private string _mapFile;
     private Material _terrainMaterial;
     private Material _roadMaterial;
-    private Material _buildingMaterial;
+    private Material _industrialBuildingMaterial;
+    private Material _residentialBuildingMaterial;
+    private Material _waterMaterial;
 
     public ImportMapWrapper(ImportMapDataEditorWindow window, string mapFile, 
                                                               Material terrainMaterial,
                                                               Material roadMaterial, 
-                                                              Material buildingMaterial)
+                                                              Material industrialBuildingMaterial,
+                                                              Material residentialBuildingMaterial,
+                                                              Material waterMaterial)
     {
         _window = window;
         _mapFile = mapFile;
         _terrainMaterial = terrainMaterial;
         _roadMaterial = roadMaterial;
-        _buildingMaterial = buildingMaterial;
+        _industrialBuildingMaterial = industrialBuildingMaterial;
+        _residentialBuildingMaterial = residentialBuildingMaterial;
+        _waterMaterial = waterMaterial;
     }
 
     public void Import()
@@ -31,8 +37,11 @@ internal sealed class ImportMapWrapper
         mapReader.Read(_mapFile);
 
         var terrainMaker = new TerrainMaker(mapReader, _terrainMaterial);
-        var buildingMaker = new BuildingMaker(mapReader, _buildingMaterial);
         var roadMaker = new RoadMaker(mapReader, _roadMaterial);
+        var buildingMaker = new BuildingMaker(mapReader, _industrialBuildingMaterial, _residentialBuildingMaterial);
+        var waterMaker = new WaterMaker(mapReader, _waterMaterial);
+
+
 
         Process(buildingMaker, "Importing buildings");
         Process(roadMaker, "Importing roads");

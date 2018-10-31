@@ -31,6 +31,7 @@ internal sealed class RoadMaker : BaseInfrastructureMaker
 
     protected override void OnObjectCreated(OsmWay way, Vector3 origin, List<Vector3> vectors, List<Vector3> normals, List<Vector2> uvs, List<int> indices)
     {
+
         for (int i = 1; i < way.NodeIDs.Count; i++)
         {
             OsmNode p1 = map.nodes[way.NodeIDs[i - 1]];
@@ -77,12 +78,6 @@ internal sealed class RoadMaker : BaseInfrastructureMaker
             indices.Add(idx4);
             indices.Add(idx2);
         }
-
-        //mf.mesh.vertices = vectors.ToArray();
-        //mf.mesh.normals = normals.ToArray();
-        //mf.mesh.triangles = indicies.ToArray();
-        //mf.mesh.uv = uvs.ToArray();
-        //mr.material.mainTextureScale = new Vector2(1, Mathf.Sqrt(Mathf.Sqrt(Mathf.Sqrt(distance))));
 
     }
 

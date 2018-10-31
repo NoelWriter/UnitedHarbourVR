@@ -4,7 +4,8 @@ using UnityEngine;
 
 internal sealed class BuildingMaker : BaseInfrastructureMaker
 {
-    private Material building;
+    private Material industrialBuilding;
+    private Material residentialBuilding;
 
     public override int NodeCount
     {
@@ -18,10 +19,11 @@ internal sealed class BuildingMaker : BaseInfrastructureMaker
     //    public Material Residential;
     //    public Material NoTag;
 
-    public BuildingMaker(MapReader mapReader, Material buildingMaterial)
+    public BuildingMaker(MapReader mapReader, Material industrialBuildingMaterial, Material residentialBuildingmaterial)
         : base(mapReader)
     {
-        building = buildingMaterial;
+        industrialBuilding = industrialBuildingMaterial;
+        residentialBuilding = residentialBuildingmaterial;
     }
 
     public override IEnumerable<int> Process()
@@ -29,24 +31,15 @@ internal sealed class BuildingMaker : BaseInfrastructureMaker
         int count = 0;
         foreach (var way in map.ways.FindAll((w) => { return w.IsBuilding && w.NodeIDs.Count > 1; }))
         {
-            CreateObject(way, building, ("Building" + count.ToString()));
-            //GameObject go = new GameObject();
-            //Vector3 localOrigin = GetCentre(way);
-            //go.transform.position = localOrigin - map.bounds.Centre;
+            if (way.IsIndustrial)
+            {
+                CreateObject(way, industrialBuilding, ("Building" + count.ToString()));
+            }
+            else if(way.IsResidential)
+            {
+                CreateObject(way, residentialBuilding, ("Building" + count.ToString()));
+            }
 
-            //MeshFilter mf = go.AddComponent<MeshFilter>();
-            //MeshRenderer mr = go.AddComponent<MeshRenderer>();
-
-            ////if (way.IsIndustrial)
-            ////{
-            ////    mr.material = Industrial;
-            ////} else if (way.IsResidential)
-            ////{
-            ////    mr.material = Residential;
-            ////} else
-            ////{
-            ////    mr.material = NoTag;
-            ////}
             count++;
             yield return count;
         }
@@ -115,9 +108,5 @@ internal sealed class BuildingMaker : BaseInfrastructureMaker
             indices.Add(idx3);
             indices.Add(0);
         }
-
-        //mf.mesh.vertices = vectors.ToArray();
-        //mf.mesh.normals = normals.ToArray();
-        //mf.mesh.triangles = indicies.ToArray();
     }
 }
