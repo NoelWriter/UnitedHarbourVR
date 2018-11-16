@@ -15,11 +15,16 @@ public class MeshRender : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            gameObject.GetComponent<Renderer>().enabled = false;
+            gameObject.GetComponent<Renderer>().enabled = !gameObject.GetComponent<Renderer>().enabled;
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            gameObject.GetComponent<Renderer>().enabled = true;
-        }
+
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    gameObject.GetComponent<Renderer>().enabled = false;
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    gameObject.GetComponent<Renderer>().enabled = true;
+        //}
     }
 }
