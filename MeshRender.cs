@@ -17,14 +17,5 @@ public class MeshRender : MonoBehaviour {
         {
             gameObject.GetComponent<Renderer>().enabled = !gameObject.GetComponent<Renderer>().enabled;
         }
-
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    gameObject.GetComponent<Renderer>().enabled = false;
-        //}
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    gameObject.GetComponent<Renderer>().enabled = true;
-        //}
     }
 }
