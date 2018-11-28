@@ -19,15 +19,27 @@ public class PauseGame : MonoBehaviour {
     {
         if (canvas.gameObject.activeInHierarchy == false)
         {
+            //If game is not paused, pause game.
             canvas.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
             //Player.GetComponent<FirstPersonController>().enabled = false;
         }
         else
         {
+            //If game is paused, resume game.
             canvas.gameObject.SetActive(false);
-            Time.timeScale = 1;
+            Time.timeScale = 1f;
             //Player.GetComponent<FirstPersonController>().enabled = true;
         }
+    }
+
+    public void MainMenu()
+    {
+        //Code to go to main menu.
+    }
+
+    public void Reset()
+    {
+        //Code to reset the game.
     }
 }
