@@ -1,0 +1,473 @@
+fileFormatVersion: 2
+guid: ec6f110151d685045b258dece5e55ec8
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f0000009000000091000000
+  assetHash:
+    serializedVersion: 2
+    Hash: b5fe2c8cec7cd9d12b7f617eea650598
+  longitude: 3.6778879165649414
+  latitude: 51.47095843172017
+  northCorrection: 0.5303777302118533
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 511.26242, y: 2556.312, z: 495.2293}
+      lookAt: {x: 511.26242, y: 0, z: 495.2293}
+      up: {x: 0, y: 0, z: 1}
+      fov: 30
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Group 1
+    100004: Group 100
+    100006: Group 102
+    100008: Group 104
+    100010: Group 106
+    100012: Group 108
+    100014: Group 11
+    100016: Group 110
+    100018: Group 112
+    100020: Group 114
+    100022: Group 116
+    100024: Group 118
+    100026: Group 120
+    100028: Group 122
+    100030: Group 124
+    100032: Group 126
+    100034: Group 128
+    100036: Group 13
+    100038: Group 130
+    100040: Group 132
+    100042: Group 134
+    100044: Group 136
+    100046: Group 138
+    100048: Group 140
+    100050: Group 142
+    100052: Group 144
+    100054: Group 15
+    100056: Group 17
+    100058: Group 19
+    100060: Group 21
+    100062: Group 23
+    100064: Group 25
+    100066: Group 27
+    100068: Group 29
+    100070: Group 3
+    100072: Group 31
+    100074: Group 33
+    100076: Group 35
+    100078: Group 37
+    100080: Group 39
+    100082: Group 41
+    100084: Group 43
+    100086: Group 44
+    100088: Group 46
+    100090: Group 48
+    100092: Group 5
+    100094: Group 50
+    100096: Group 52
+    100098: Group 54
+    100100: Group 56
+    100102: Group 58
+    100104: Group 60
+    100106: Group 62
+    100108: Group 64
+    100110: Group 66
+    100112: Group 68
+    100114: Group 7
+    100116: Group 70
+    100118: Group 72
+    100120: Group 74
+    100122: Group 76
+    100124: Group 78
+    100126: Group 80
+    100128: Group 82
+    100130: Group 84
+    100132: Group 86
+    100134: Group 88
+    100136: Group 9
+    100138: Group 90
+    100140: Group 92
+    100142: Group 94
+    100144: Group 96
+    100146: Group 98
+    400000: //RootNode
+    400002: Group 1
+    400004: Group 100
+    400006: Group 102
+    400008: Group 104
+    400010: Group 106
+    400012: Group 108
+    400014: Group 11
+    400016: Group 110
+    400018: Group 112
+    400020: Group 114
+    400022: Group 116
+    400024: Group 118
+    400026: Group 120
+    400028: Group 122
+    400030: Group 124
+    400032: Group 126
+    400034: Group 128
+    400036: Group 13
+    400038: Group 130
+    400040: Group 132
+    400042: Group 134
+    400044: Group 136
+    400046: Group 138
+    400048: Group 140
+    400050: Group 142
+    400052: Group 144
+    400054: Group 15
+    400056: Group 17
+    400058: Group 19
+    400060: Group 21
+    400062: Group 23
+    400064: Group 25
+    400066: Group 27
+    400068: Group 29
+    400070: Group 3
+    400072: Group 31
+    400074: Group 33
+    400076: Group 35
+    400078: Group 37
+    400080: Group 39
+    400082: Group 41
+    400084: Group 43
+    400086: Group 44
+    400088: Group 46
+    400090: Group 48
+    400092: Group 5
+    400094: Group 50
+    400096: Group 52
+    400098: Group 54
+    400100: Group 56
+    400102: Group 58
+    400104: Group 60
+    400106: Group 62
+    400108: Group 64
+    400110: Group 66
+    400112: Group 68
+    400114: Group 7
+    400116: Group 70
+    400118: Group 72
+    400120: Group 74
+    400122: Group 76
+    400124: Group 78
+    400126: Group 80
+    400128: Group 82
+    400130: Group 84
+    400132: Group 86
+    400134: Group 88
+    400136: Group 9
+    400138: Group 90
+    400140: Group 92
+    400142: Group 94
+    400144: Group 96
+    400146: Group 98
+    2100000: _defaultMat
+    2300000: Group 1
+    2300002: Group 100
+    2300004: Group 102
+    2300006: Group 104
+    2300008: Group 106
+    2300010: Group 108
+    2300012: Group 11
+    2300014: Group 110
+    2300016: Group 112
+    2300018: Group 114
+    2300020: Group 116
+    2300022: Group 118
+    2300024: Group 120
+    2300026: Group 122
+    2300028: Group 124
+    2300030: Group 126
+    2300032: Group 128
+    2300034: Group 13
+    2300036: Group 130
+    2300038: Group 132
+    2300040: Group 134
+    2300042: Group 136
+    2300044: Group 138
+    2300046: Group 140
+    2300048: Group 142
+    2300050: Group 144
+    2300052: Group 15
+    2300054: Group 17
+    2300056: Group 19
+    2300058: Group 21
+    2300060: Group 23
+    2300062: Group 25
+    2300064: Group 27
+    2300066: Group 29
+    2300068: Group 3
+    2300070: Group 31
+    2300072: Group 33
+    2300074: Group 35
+    2300076: Group 37
+    2300078: Group 39
+    2300080: Group 41
+    2300082: Group 44
+    2300084: Group 46
+    2300086: Group 48
+    2300088: Group 5
+    2300090: Group 50
+    2300092: Group 52
+    2300094: Group 54
+    2300096: Group 56
+    2300098: Group 58
+    2300100: Group 60
+    2300102: Group 62
+    2300104: Group 64
+    2300106: Group 66
+    2300108: Group 68
+    2300110: Group 7
+    2300112: Group 70
+    2300114: Group 72
+    2300116: Group 74
+    2300118: Group 76
+    2300120: Group 78
+    2300122: Group 80
+    2300124: Group 82
+    2300126: Group 84
+    2300128: Group 86
+    2300130: Group 88
+    2300132: Group 9
+    2300134: Group 90
+    2300136: Group 92
+    2300138: Group 94
+    2300140: Group 96
+    2300142: Group 98
+    3300000: Group 1
+    3300002: Group 100
+    3300004: Group 102
+    3300006: Group 104
+    3300008: Group 106
+    3300010: Group 108
+    3300012: Group 11
+    3300014: Group 110
+    3300016: Group 112
+    3300018: Group 114
+    3300020: Group 116
+    3300022: Group 118
+    3300024: Group 120
+    3300026: Group 122
+    3300028: Group 124
+    3300030: Group 126
+    3300032: Group 128
+    3300034: Group 13
+    3300036: Group 130
+    3300038: Group 132
+    3300040: Group 134
+    3300042: Group 136
+    3300044: Group 138
+    3300046: Group 140
+    3300048: Group 142
+    3300050: Group 144
+    3300052: Group 15
+    3300054: Group 17
+    3300056: Group 19
+    3300058: Group 21
+    3300060: Group 23
+    3300062: Group 25
+    3300064: Group 27
+    3300066: Group 29
+    3300068: Group 3
+    3300070: Group 31
+    3300072: Group 33
+    3300074: Group 35
+    3300076: Group 37
+    3300078: Group 39
+    3300080: Group 41
+    3300082: Group 44
+    3300084: Group 46
+    3300086: Group 48
+    3300088: Group 5
+    3300090: Group 50
+    3300092: Group 52
+    3300094: Group 54
+    3300096: Group 56
+    3300098: Group 58
+    3300100: Group 60
+    3300102: Group 62
+    3300104: Group 64
+    3300106: Group 66
+    3300108: Group 68
+    3300110: Group 7
+    3300112: Group 70
+    3300114: Group 72
+    3300116: Group 74
+    3300118: Group 76
+    3300120: Group 78
+    3300122: Group 80
+    3300124: Group 82
+    3300126: Group 84
+    3300128: Group 86
+    3300130: Group 88
+    3300132: Group 9
+    3300134: Group 90
+    3300136: Group 92
+    3300138: Group 94
+    3300140: Group 96
+    3300142: Group 98
+    4300000: Mesh Group 1
+    4300002: Mesh Group 3
+    4300004: Mesh Group 5
+    4300006: Mesh Group 7
+    4300008: Mesh Group 9
+    4300010: Mesh Group 11
+    4300012: Mesh Group 13
+    4300014: Mesh Group 15
+    4300016: Mesh Group 17
+    4300018: Mesh Group 19
+    4300020: Mesh Group 21
+    4300022: Mesh Group 23
+    4300024: Mesh Group 25
+    4300026: Mesh Group 27
+    4300028: Mesh Group 29
+    4300030: Mesh Group 31
+    4300032: Mesh Group 33
+    4300034: Mesh Group 35
+    4300036: Mesh Group 37
+    4300038: Mesh Group 39
+    4300040: Mesh Group 41
+    4300042: Mesh Group 44
+    4300044: Mesh Group 46
+    4300046: Mesh Group 48
+    4300048: Mesh Group 50
+    4300050: Mesh Group 52
+    4300052: Mesh Group 54
+    4300054: Mesh Group 56
+    4300056: Mesh Group 58
+    4300058: Mesh Group 60
+    4300060: Mesh Group 62
+    4300062: Mesh Group 64
+    4300064: Mesh Group 66
+    4300066: Mesh Group 68
+    4300068: Mesh Group 70
+    4300070: Mesh Group 72
+    4300072: Mesh Group 74
+    4300074: Mesh Group 76
+    4300076: Mesh Group 78
+    4300078: Mesh Group 80
+    4300080: Mesh Group 82
+    4300082: Mesh Group 84
+    4300084: Mesh Group 86
+    4300086: Mesh Group 88
+    4300088: Mesh Group 90
+    4300090: Mesh Group 92
+    4300092: Mesh Group 94
+    4300094: Mesh Group 96
+    4300096: Mesh Group 98
+    4300098: Mesh Group 100
+    4300100: Mesh Group 102
+    4300102: Mesh Group 104
+    4300104: Mesh Group 106
+    4300106: Mesh Group 108
+    4300108: Mesh Group 110
+    4300110: Mesh Group 112
+    4300112: Mesh Group 114
+    4300114: Mesh Group 116
+    4300116: Mesh Group 118
+    4300118: Mesh Group 120
+    4300120: Mesh Group 122
+    4300122: Mesh Group 124
+    4300124: Mesh Group 126
+    4300126: Mesh Group 128
+    4300128: Mesh Group 130
+    4300130: Mesh Group 132
+    4300132: Mesh Group 134
+    4300134: Mesh Group 136
+    4300136: Mesh Group 138
+    4300138: Mesh Group 140
+    4300140: Mesh Group 142
+    4300142: Mesh Group 144
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
