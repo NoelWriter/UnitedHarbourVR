@@ -35,11 +35,13 @@ public class PauseGame : MonoBehaviour {
 
     public void MainMenu()
     {
+        //Code to go to the main menu.
         Application.LoadLevel("MainMenu");
     }
 
     public void Reset()
     {
         //Code to reset the game.
+        Application.LoadLevel("Vlissingen");
     }
 }
