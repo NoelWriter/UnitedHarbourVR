@@ -6,7 +6,7 @@ public class menuscript : MonoBehaviour {
 
 	// Use this for initialization
 	public void StartApp() {
-        Application.LoadLevel("Vlissinge");
+        Application.LoadLevel("Vlissingen");
 	}
 	
 	// Update is called once per frame
