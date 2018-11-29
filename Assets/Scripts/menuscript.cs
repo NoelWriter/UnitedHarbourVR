@@ -5,8 +5,8 @@ using UnityEngine;
 public class menuscript : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	public void StartApp() {
+        Application.LoadLevel("Vlissinge");
 	}
 	
 	// Update is called once per frame
