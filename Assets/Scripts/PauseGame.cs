@@ -35,7 +35,7 @@ public class PauseGame : MonoBehaviour {
 
     public void MainMenu()
     {
-        //Code to go to main menu.
+        Application.LoadLevel("MainMenu");
     }
 
     public void Reset()

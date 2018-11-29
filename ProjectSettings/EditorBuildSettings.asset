@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PauseMenuScene.unity
     guid: 62e709ae19cd491448720ed308321f9b
+  - enabled: 1
+    path: Assets/Scenes/Vlissinge.unity
+    guid: dcd9f70d49468884292591cd3d9f389d
   m_configObjects: {}
