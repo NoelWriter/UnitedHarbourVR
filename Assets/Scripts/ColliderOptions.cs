@@ -3,26 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public class ColliderOptions : MonoBehaviour {
+public class ColliderOptions : MonoScript{
 
-    private GameObject[] Buildings = GameObject.FindGameObjectsWithTag("Building");
+    private GameObject[] tagStr;
+    private string state;
 
-
-
-    public ColliderOptions()
+    //Fill the gameobject array with gameobjects with the tag received from the drop-down selection
+    public ColliderOptions(string tag)
     {
-        Debug.Log("Initialized");
+        tagStr = GameObject.FindGameObjectsWithTag(tag);
+
     }
 
-	public void Generate()
+    //Generate a meshcollider for every gameobject in the array tagStr
+    public void Generate()
     {
-        foreach(GameObject go in Buildings)
+        foreach(GameObject go in tagStr)
         {
-                MeshCollider mc = go.AddComponent<MeshCollider>() as MeshCollider;
-                mc.convex = true;
-        }
+            MeshCollider mc = go.AddComponent<MeshCollider>() as MeshCollider;
+            mc.convex = true;
 
-        Debug.Log("Done, generating colliders");
+        }
+        state = "Colliders have been generated";
     }
 
+    //Remove the meshcollider from every gameobject in the array tagStr
+    public void Remove()
+    {
+        foreach(GameObject go in tagStr)
+        {
+            DestroyImmediate(go.GetComponent<MeshCollider>());
+
+        }
+        state = "Colliders have been removed";
+    }
+
+    public string getState()
+    {
+        return state;
+    }
 }
