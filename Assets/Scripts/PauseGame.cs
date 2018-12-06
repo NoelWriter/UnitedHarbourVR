@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityStandardAssets.Characters.FirstPerson;
 
 public class PauseGame : MonoBehaviour {
     public Transform canvas;
@@ -22,27 +21,25 @@ public class PauseGame : MonoBehaviour {
             //If game is not paused, pause game.
             canvas.gameObject.SetActive(true);
             Time.timeScale = 0;
-            //Player.GetComponent<CharacterController>().enabled = false;
         }
         else
         {
             //If game is paused, resume game.
             canvas.gameObject.SetActive(false);
             Time.timeScale = 1;
-            //Player.GetComponent<CharacterController>().enabled = true;
         }
     }
 
-    public void MainMenu()
-    {
-        //Code to go to the main menu.
-        Application.LoadLevel("MainMenu");
-    }
-
+    //Code to reset the game.
     public void Reset()
     {
-        //Code to reset the game.
         Application.LoadLevel("Vlissingen");
         Time.timeScale = 1;
+    }
+
+    //Code to go to the main menu.
+    public void MainMenu()
+    {
+        Application.LoadLevel("MainMenu");
     }
 }

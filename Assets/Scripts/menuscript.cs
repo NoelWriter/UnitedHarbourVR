@@ -4,22 +4,30 @@ using UnityEngine;
 
 public class menuscript : MonoBehaviour {
 
-	// Use this for initialization
-	public void StartApp() {
-        Debug.Log("Loading scene Vlissingen...");
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    //Code to start the game, Vlissingen scene
+    public void StartApp() {
+        Debug.Log("Loading scene Vlissingen.");
         Application.LoadLevel("Vlissingen");
         Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
-    // Use this for initialization
-    public void QuitApp()
+    //Code to start the game, Vlissingen scene
+    public void Settings()
     {
-        Debug.Log("Quitting Game...");
+        Debug.Log("Opening settings menu.");
+    }
+
+    //Code to quit the game
+    public void Quit()
+    {
+        //Code to quit the game.
+        Debug.Log("Quitting Game.");
         Application.Quit();
     }
 }
