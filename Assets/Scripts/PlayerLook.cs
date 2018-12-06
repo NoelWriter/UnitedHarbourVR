@@ -13,8 +13,13 @@ public class PlayerLook : MonoBehaviour
 
     private void Awake()
     {
-        LockCursor();
+
         xAxisClamp = 0.0f;
+    }
+
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void LockCursor()
@@ -24,11 +29,17 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
-        
-        CameraRotation();
+        // Checks if the game if paused. When it is, dont update.
+        if (Time.timeScale == 0)
+        {
+            UnlockCursor();
+        }
+        else
+        {
+            LockCursor();
+            CameraRotation();
+        }
     }
-
-
 
     private void CameraRotation()
     {

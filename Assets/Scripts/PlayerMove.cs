@@ -26,18 +26,22 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        float flying = Input.GetAxis("Fire3");
-
-        if (flying != lastFlyState)
+        // Checks if the game if paused. When it is, dont update.
+        if (Time.timeScale != 0)
         {
-            lastFlyState = flying;
+            float flying = Input.GetAxis("Fire3");
 
-            if (flying != 0)
+            if (flying != lastFlyState)
             {
-                isFly = !isFly;
+                lastFlyState = flying;
+
+                if (flying != 0)
+                {
+                    isFly = !isFly;
+                }
             }
+            PlayerMovement();
         }
-        PlayerMovement();
     }
 
     private void PlayerMovement()
@@ -70,8 +74,5 @@ public class PlayerMove : MonoBehaviour
             //moveDirection.y = moveDirection.y - (gravity* Time.deltaTime);
             charController.Move(forwardMovement + rightMovement + gravMovement);
         }
-        
-        
     }
-
 }

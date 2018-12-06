@@ -21,15 +21,15 @@ public class PauseGame : MonoBehaviour {
         {
             //If game is not paused, pause game.
             canvas.gameObject.SetActive(true);
-            Time.timeScale = 0f;
-            //Player.GetComponent<FirstPersonController>().enabled = false;
+            Time.timeScale = 0;
+            //Player.GetComponent<CharacterController>().enabled = false;
         }
         else
         {
             //If game is paused, resume game.
             canvas.gameObject.SetActive(false);
-            Time.timeScale = 1f;
-            //Player.GetComponent<FirstPersonController>().enabled = true;
+            Time.timeScale = 1;
+            //Player.GetComponent<CharacterController>().enabled = true;
         }
     }
 
@@ -43,5 +43,6 @@ public class PauseGame : MonoBehaviour {
     {
         //Code to reset the game.
         Application.LoadLevel("Vlissingen");
+        Time.timeScale = 1;
     }
 }
