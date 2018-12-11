@@ -9,10 +9,11 @@ public class Movement : MonoBehaviour
     public Transform[] target;
     public float speed;
     private int current;
+    public Transform proppelor;
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, target[current].position) > 10)
+        if (Vector3.Distance(transform.position, target[current].position) > 15)
         {
             Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
             GetComponent<Rigidbody>().MovePosition(pos);
@@ -21,6 +22,7 @@ public class Movement : MonoBehaviour
         {
             current = (current + 1) % target.Length;
         }
+        moveProppelor();
         steer();
     }
     private void steer()
@@ -35,6 +37,10 @@ public class Movement : MonoBehaviour
 
         // Move our position a step closer to the target.
         transform.rotation = Quaternion.LookRotation(newDir);
+    }
+    private void moveProppelor()
+    {
+        proppelor.Rotate(0, 0, Time.deltaTime * 10000);
     }
 }
 
