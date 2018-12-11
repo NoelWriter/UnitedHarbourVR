@@ -15,8 +15,9 @@ public class Infobox : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        thumbnail += "\n \n Press i for more information";
-	}
+        thumbnail = "Korte informatie wordt getoond \n \n" + thumbnail + "\n \n Druk op i voor meer informatie";
+        text = "Uitgebreide informatie wordt getoond \n \n" + text + "\n \n Druk op i voor minder informatie";
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -47,7 +48,7 @@ public class Infobox : MonoBehaviour {
     {
         if (thumbnailbool && display == false)
         {
-            GUI.Box(new Rect((Screen.width - 200) / 2, (Screen.height - 50) / 2, 200, 50), thumbnail);
+            GUI.TextArea(new Rect((Screen.width - 300) / 2, (Screen.height - 150) / 2, 300, 150), thumbnail);
         }
 
         if (thumbnailbool && display)
