@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Assets/Scripts/ColliderOptions.cs
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,3 +45,33 @@ public class ColliderOptions : MonoScript
         return state;
     }
 }
+=======
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class ColliderOptions : MonoBehaviour {
+
+    private GameObject[] Buildings = GameObject.FindGameObjectsWithTag("Building");
+
+
+
+    public ColliderOptions()
+    {
+        Debug.Log("Initialized");
+    }
+
+	public void Generate()
+    {
+        foreach(GameObject go in Buildings)
+        {
+                MeshCollider mc = go.AddComponent<MeshCollider>() as MeshCollider;
+                mc.convex = true;
+        }
+
+        Debug.Log("Done, generating colliders");
+    }
+
+}
+>>>>>>> 912ef23a0ff7840dcf429a94a5382fc9a2ff2547:Assets/Scripts/cvs/ColliderOptions.cs

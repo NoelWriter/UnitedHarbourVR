@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Assets/Scripts/ColliderWindow.cs
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,4 +60,29 @@ public class ColliderWindow : EditorWindow
 
         GUI.Label(new Rect(100, 100, 1000, 20), state);
     }
+=======
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class ColliderWindow : EditorWindow
+{
+    [MenuItem("Window/Edit Colliders")]
+    public static void ShowEditorWindow()
+    {
+        var window = GetWindow<ColliderWindow>();
+        window.Show();
+    }
+
+    private void OnGUI()
+    {
+        var collider = new ColliderOptions();
+        if (GUILayout.Button("Generate colliders"))
+        {
+            collider.Generate();
+        }
+
+    }
+>>>>>>> 912ef23a0ff7840dcf429a94a5382fc9a2ff2547:Assets/Scripts/cvs/ColliderWindow.cs
 }
