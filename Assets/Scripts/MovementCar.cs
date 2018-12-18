@@ -6,17 +6,21 @@ public class MovementCar : MonoBehaviour
 {
 
     public Transform[] target;
-    public float speed;
     private int current;
     public Transform[] wheels;
     public Transform[] turningWheels;
+    private float carSpeed;
+    private Vector3 velocity = Vector3.zero;
+    private float time = 5;
+    private int last;
 
     private void Update()
     {
         rotateWheels();
         if (Vector3.Distance(transform.position, target[current].position) > 20)
         {
-            Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, (speed * 2) * Time.deltaTime);
+            float time = (Vector3.Distance(transform.position, target[current].position)/15);
+            Vector3 pos = Vector3.SmoothDamp(transform.position, target[current].position, ref velocity , time);
             GetComponent<Rigidbody>().MovePosition(pos);
         }
         else
@@ -24,17 +28,20 @@ public class MovementCar : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target[current].position) > 7)
             {
-                Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
+                time = (Vector3.Distance(transform.position, target[current].position) / 7);
+                Vector3 pos = Vector3.SmoothDamp(transform.position, target[current].position, ref velocity, time);
                 GetComponent<Rigidbody>().MovePosition(pos);
             }
             {
-                if (Vector3.Distance(transform.position, target[current].position) > 1)
+                if (Vector3.Distance(transform.position, target[current].position) > 0.1)
                 {
-                    Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, (speed / 2) * Time.deltaTime);
+                    time = (Vector3.Distance(transform.position, target[current].position) / 4);
+                    Vector3 pos = Vector3.SmoothDamp(transform.position, target[current].position, ref velocity, time);
                     GetComponent<Rigidbody>().MovePosition(pos);
                 }
                 else
                 {
+                    last = current;
                     current = (current + 1) % target.Length;
                 }
             }
@@ -45,8 +52,8 @@ public class MovementCar : MonoBehaviour
     {
         Vector3 targetDir = target[current].position - transform.position;
 
-        // The step size is equal to speed times frame time.
-        float step = (speed / 5) * Time.deltaTime;
+        // The step size is equal to speed / 5 times frame time.
+        float step = 0.5f * Time.deltaTime;
 
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
 
