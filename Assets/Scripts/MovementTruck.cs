@@ -15,13 +15,13 @@ public class MovementTruck : MonoBehaviour
     {
         rotateWheels();
         steer();
-        if (Vector3.Distance(transform.position, target[current].position) > 3)
+        if (Vector3.Distance(transform.position, target[current].position) > 7)
             {
                 Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
                 GetComponent<Rigidbody>().MovePosition(pos);
             }
             {
-                if (Vector3.Distance(transform.position, target[current].position) > 1)
+                if (Vector3.Distance(transform.position, target[current].position) > 3)
                 {
                     Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, (speed / 4) * Time.deltaTime);
                     GetComponent<Rigidbody>().MovePosition(pos);
