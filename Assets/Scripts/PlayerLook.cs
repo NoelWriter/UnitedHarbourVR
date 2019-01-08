@@ -46,8 +46,6 @@ public class PlayerLook : MonoBehaviour
         float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis(mouseYInputName) * mouseSensitivity * Time.deltaTime;
 
-        Debug.Log(", X :" + mouseX + ", Y :" + mouseY);
-
         xAxisClamp += mouseY;
         if (xAxisClamp > 90.0f)
         {

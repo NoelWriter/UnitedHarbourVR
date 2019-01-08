@@ -96,7 +96,6 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             boostConstant = movementSpeedMultiplier;
-            Debug.Log("Shift pressed");
         }
         else
         {
