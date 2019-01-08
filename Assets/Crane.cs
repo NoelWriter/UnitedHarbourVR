@@ -19,33 +19,42 @@ public class Crane : MonoBehaviour
     private bool moveCrane = false;
     private bool turnCrane = false;
     private bool setContainer = false;
-
+    private bool getButton = false;
     private float speed = 0.5f;
 
 
     public void Update()
     {
+        if (getButton == true || Input.GetKeyDown("t"))
+        {
+            getButton = true;
 
-        if (getContainer == false)
-        {
-            GetContainer();
-            
+            if (getContainer == false)
+            {
+                GetContainer();
+
+            }
+            else if (moveCrane == false)
+            {
+                MoveCrane();
+
+            }
+            else if (turnCrane == false)
+            {
+                TurnCrane();
+            }
+            else if (setContainer == false)
+            {
+                Debug.Log(setContainer);
+                SetContainer();
+            }
         }
-        else if (moveCrane == false)
-        {
-            MoveCrane();
-                       
-        }
-        else if (turnCrane == false)
-        {
-            TurnCrane();
-        }
-        else if (setContainer == false)
+        else
         {
 
-            SetContainer();
         }
     }
+        
 
     public void GetContainer()
     {
@@ -74,33 +83,38 @@ public class Crane : MonoBehaviour
 
     public void TurnCrane()
     {
-        if (craneTop.rotation.eu == new Vector3(craneTop.eulerAngles.x, -180, craneTop.eulerAngles.z)) 
+        if (craneTop.rotation.eulerAngles.y < 180)
         {
-            turnCrane = true;
-            container.Translate(0, 0, -30);
-        }
-        else
-        { 
             float rotation_y;
             float speed = 20f;
             rotation_y = craneTop.rotation.eulerAngles.x;
             rotation_y += 180;
             craneTop.rotation = Quaternion.RotateTowards(craneTop.rotation, Quaternion.Euler(craneTop.eulerAngles.x, rotation_y, craneTop.eulerAngles.z), Time.deltaTime * speed);
+            Debug.Log(craneTop.rotation.eulerAngles.y);
         }
-
+        else
+        {
+            turnCrane = true;
+            Debug.Log(turnCrane);
+            Update();
+        }
     }
 
     public void SetContainer()
     {
-        if (Vector3.Distance(container.position, trailer.position) == 0)
+        if (Vector3.Distance(container.position, trailer.position) != 0)
         {
+
             float speed = 0.5f;
+            Debug.Log(speed);
             float step = speed * Time.deltaTime;
-            container.position = Vector3.MoveTowards(container.position, trailer.position, step);
+            container.position = Vector3.MoveTowards(container.position, target.position, step);
         }
         else
         {
             setContainer = true;
         }
     }
+
+
 }
