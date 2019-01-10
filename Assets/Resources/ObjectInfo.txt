@@ -1,3 +1,4 @@
-12;Dit is de korte tekst van 12 ;En dit is de lange text
-13;Korte tekst van 13 ;En de laaaaaaaaaaaaaange
-66;Object 66;Langetext object66
+1054 ;Dit is havennummer 1054. De gebouwen in dit deel behoren tot Verbrugge Zeeland Terminals en Rademaker's. ;Dit is het havengebied met nummer 1054. De gebouwen in dit deel behoren tot Verbrugge Zeeland Terminals en Rademaker's. De terminals van Verbrugge worden gebruikt voor opslag. Rademaker's is een bedrijf gespecialiseerd op het gebied van controle.
+3995 ;Dit is havennummer 3995. Dit gebouw is van het bedrijf Kloosterboer Vlissingen. ;Dit is havennummer 3995. Dit gebouw is van het bedrijf Kloosterboer Vlissingen. Kloosterboer is een bedrijf dat is gespecialiseerd in het vervoeren en opslaan van gekoelde producten. Denk hierbij bijvoorbeeld aan fruit, vis, friet en verschillende dranken.
+3993 ;Dit is havennummer 3993. Dit gebouw is een laboratorium van het bedrijf Labojuice. ;Dit is havennummer 3993. Dit gebouw is een laboratorium van het bedrijf Labojuice. Dit bedrijf is gespecialiseerd in het produceren van vruchten- en groentesappen en in het onderzoek naar de eigenschappen van vruchten en groenten.
+3989 ;Dit is havennummer 3989. Deze gebouwen behoren tot het bedrijf C-Port. ;Dit is havennummer 3989. Deze gebouwen behoren tot het bedrijf C-Port. C-Port is een personele dienstverlener. Zij bieden hun klanten onder andere optimale arbeidsflexibiliteit met behoud van vakmanschap. Dit is in verschillende branches, denk bijvoorbeeld aan ploegenwerk, hijswerk of beveiliging.
