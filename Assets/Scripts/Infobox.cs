@@ -6,6 +6,8 @@ using System;
 
 public class Infobox : MonoBehaviour
 {
+    private string FilePath;
+
     public string ObjectName;
     private string longtext = null;
     private string shorttext = null;
@@ -29,6 +31,7 @@ public class Infobox : MonoBehaviour
         }
         else
         {
+            Debug.Log("No information about object: '" + ObjectName + "' found in: " + FilePath);
             shorttext = "Er is geen informatie over dit object opgegeven.";
             longtext = shorttext;
         }
@@ -45,13 +48,13 @@ public class Infobox : MonoBehaviour
 
     void FileReader()
     {
-        string m_path = Application.dataPath + "/Resources/ObjectInfo.txt";
+        FilePath = Application.dataPath + "/Resources/ObjectInfo.txt";
 
         try
         {
             // Create an instance of StreamReader to read from a file.
             // The using statement also closes the StreamReader.
-            using (StreamReader sr = new StreamReader(m_path))
+            using (StreamReader sr = new StreamReader(FilePath))
             {
                 string line;
                 // Read and display lines from the file until the end of 
