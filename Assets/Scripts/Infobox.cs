@@ -63,6 +63,7 @@ public class Infobox : MonoBehaviour
                 {
                     if (line.Contains(ObjectName))
                     {
+                        //Turn Bool on, information found.
                         objectinformation = true;
                         shorttext = line.Split(';')[1];
                         longtext = line.Split(';')[2];
