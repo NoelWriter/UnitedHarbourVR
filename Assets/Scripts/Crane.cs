@@ -83,14 +83,13 @@ public class Crane : MonoBehaviour
 
     public void TurnCrane()
     {
-        if (craneTop.rotation.eulerAngles.y < 180)
+        if (craneTop.rotation.eulerAngles.y != 180)
         {
             float rotation_y;
             float speed = 20f;
             rotation_y = craneTop.rotation.eulerAngles.x;
             rotation_y += 180;
             craneTop.rotation = Quaternion.RotateTowards(craneTop.rotation, Quaternion.Euler(craneTop.eulerAngles.x, rotation_y, craneTop.eulerAngles.z), Time.deltaTime * speed);
-            Debug.Log(craneTop.rotation.eulerAngles.y);
         }
         else
         {
